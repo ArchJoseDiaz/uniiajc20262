@@ -15,7 +15,6 @@ public class Ejercicio07 {
 
         int[] pares = new int[contPares];
         int[] impares = new int[contImpares];
-        
         int idxP = 0, idxI = 0;
         for (int num : A) {
             if (num % 2 == 0) {
