@@ -6,7 +6,9 @@ public class Ejercicio24 {
                 "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
 
         double sumaTotal = 0;
-        for (double prod : cosechaMeses) sumaTotal += prod;
+        for (double prod : cosechaMeses) {
+            sumaTotal += prod;
+        }
         double promedioAnual = sumaTotal / cosechaMeses.length;
 
         int mesesSuperiores = 0;
@@ -15,8 +17,12 @@ public class Ejercicio24 {
         double maxProduccion = cosechaMeses[0];
 
         for (int i = 0; i < cosechaMeses.length; i++) {
-            if (cosechaMeses[i] > promedioAnual) mesesSuperiores++;
-            if (cosechaMeses[i] < promedioAnual) mesesInferiores++;
+            if (cosechaMeses[i] > promedioAnual) {
+                mesesSuperiores++;
+            }
+            if (cosechaMeses[i] < promedioAnual) {
+                mesesInferiores++;
+            }
             if (cosechaMeses[i] > maxProduccion) {
                 maxProduccion = cosechaMeses[i];
                 mesMaxIdx = i;

@@ -6,16 +6,23 @@ public class Ejercicio07 {
 
         int contPares = 0, contImpares = 0;
         for (int num : A) {
-            if (num % 2 == 0) contPares++;
-            else contImpares++;
+            if (num % 2 == 0) {
+                contPares++;
+            } else {
+                contImpares++;
+            }
         }
 
         int[] pares = new int[contPares];
         int[] impares = new int[contImpares];
+        
         int idxP = 0, idxI = 0;
         for (int num : A) {
-            if (num % 2 == 0) pares[idxP++] = num;
-            else impares[idxI++] = num;
+            if (num % 2 == 0) {
+                pares[idxP++] = num;
+            } else {
+                impares[idxI++] = num;
+            }
         }
 
         System.out.println("Arreglo Original A: " + Arrays.toString(A));

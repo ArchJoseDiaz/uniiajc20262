@@ -7,7 +7,9 @@ public class Ejercicio12 {
 
         int coincidencias = 0;
         for (int num : A) {
-            if (num == X) coincidencias++;
+            if (num == X) {
+                coincidencias++;
+            }
         }
 
         int[] B = new int[coincidencias];

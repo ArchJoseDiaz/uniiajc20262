@@ -6,9 +6,13 @@ public class Ejercicio11 {
 
         int cNeg = 0, cCeros = 0, cPos = 0;
         for (int num : A) {
-            if (num < 0) cNeg++;
-            else if (num == 0) cCeros++;
-            else cPos++;
+            if (num < 0) {
+                cNeg++;
+            } else if (num == 0) {
+                cCeros++;
+            } else {
+                cPos++;
+            }
         }
 
         int[] negativos = new int[cNeg];
@@ -17,9 +21,13 @@ public class Ejercicio11 {
         int iN = 0, iC = 0, iP = 0;
 
         for (int num : A) {
-            if (num < 0) negativos[iN++] = num;
-            else if (num == 0) ceros[iC++] = num;
-            else positivos[iP++] = num;
+            if (num < 0) {
+                negativos[iN++] = num;
+            } else if (num == 0) {
+                ceros[iC++] = num;
+            } else {
+                positivos[iP++] = num;
+            }
         }
 
         System.out.println("Original A: " + Arrays.toString(A));

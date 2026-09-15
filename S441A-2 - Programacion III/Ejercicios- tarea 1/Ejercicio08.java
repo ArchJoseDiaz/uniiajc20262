@@ -12,14 +12,22 @@ public class Ejercicio08 {
         int mayor = numeros[0];
         int menor = numeros[0];
         for (int num : numeros) {
-            if (num > mayor) mayor = num;
-            if (num < menor) menor = num;
+            if (num > mayor) {
+                mayor = num;
+            }
+            if (num < menor) {
+                menor = num;
+            }
         }
 
         int repMayor = 0, repMenor = 0;
         for (int num : numeros) {
-            if (num == mayor) repMayor++;
-            if (num == menor) repMenor++;
+            if (num == mayor) {
+                repMayor++;
+            }
+            if (num == menor) {
+                repMenor++;
+            }
         }
 
         System.out.println("Números generados: " + Arrays.toString(numeros));
