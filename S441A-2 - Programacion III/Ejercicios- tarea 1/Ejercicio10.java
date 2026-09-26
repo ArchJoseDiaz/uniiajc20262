@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Ejercicio10 {
     public static void main(String[] args) {
-        int[] A = {8, 5, 3, 10, 2, 8, 1}; // N = 7
+        int[] A = {8, 5, 3, 10, 2, 8, 1,}; // N = 7
         int n = A.length;
         int tamB = (n + 1) / 2;
         int[] B = new int[tamB];
