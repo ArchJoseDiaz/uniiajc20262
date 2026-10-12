@@ -1,21 +1,35 @@
 import java.util.Stack;
 
 public class Problema9_2 {
-    public static Stack<Integer> copiarPila(Stack<Integer> origen) {
-        Stack<Integer> aux = new Stack<>();
-        Stack<Integer> destino = new Stack<>();
+    public static boolean esCadenaInversa(String entrada) {
+        Stack<Character> pila = new Stack<>();
+        int i = 0;
 
-        // Paso 1: Origen -> Auxiliar (se invierte el orden)
-        while (!origen.isEmpty()) {
-            aux.push(origen.pop());
+        // 1. Apilar los caracteres de X hasta encontrar el separador '&'
+        while (i < entrada.length() && entrada.charAt(i) != '&') {
+            pila.push(entrada.charAt(i));
+            i++;
         }
 
-        // Paso 2: Auxiliar -> Destino y Origen (vuelve al orden original)
-        while (!aux.isEmpty()) {
-            int elemento = aux.pop();
-            destino.push(elemento);
-            origen.push(elemento); // Se devuelve a la original para no destruirla
+        // Si terminó la cadena y no encontramos el '&', es incorrecto
+        if (i == entrada.length()) return false;
+
+        i++; // Saltamos el carácter '&'
+
+        // 2. Comparar el resto de la cadena (Y) con los elementos de la pila
+        while (i < entrada.length()) {
+            if (pila.isEmpty() || entrada.charAt(i) != pila.pop()) {
+                return false; // No coincide o Y es más larga que X
+            }
+            i++;
         }
-        return destino;
+
+        // Si la pila quedó vacía, significa que X e Y tenían el mismo tamaño
+        return pila.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(esCadenaInversa("hola&aloh")); // true
+        System.out.println(esCadenaInversa("abc&abc"));   // false
     }
 }
